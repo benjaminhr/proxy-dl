@@ -1,0 +1,16 @@
+{
+  "name": "proxy-dl",
+  "version": "1.1.0",
+  "description": "Downloads youtube video with a US proxy",
+  "main": "proxy-dl.js",
+  "author": "Benjamin Robson",
+  "license": "MIT",
+  "bin": {
+    "proxy-dl": "./bin.js"
+  },
+  "preferGlobal": true,
+  "dependencies": {
+    "chalk": "^2.3.0",
+    "progress": "^2.0.0"
+  }
+}
