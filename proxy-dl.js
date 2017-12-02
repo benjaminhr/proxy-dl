@@ -28,7 +28,7 @@ var proxydl = () => {
       if (bar.complete) {
         console.log('DONE 🎉')
       }
-      bar.tick(0.5);
+      bar.tick(0.2);
     })
     
     child.stderr.on('data', (data) => {
