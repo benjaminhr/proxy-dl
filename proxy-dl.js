@@ -26,7 +26,7 @@ var proxydl = () => {
 
     child.stdout.on('data', (data) => {
       if (bar.complete) {
-        console.log(chalk.bgBlue('DONE 🎉'));
+        console.log('DONE 🎉')
       }
       bar.tick(0.5);
     })
@@ -43,7 +43,9 @@ var proxydl = () => {
       }      
     })
 
-
+    child.on('close', () => {
+      process.exit(1)
+    })
   }
 }
 
