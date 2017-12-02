@@ -1,6 +1,6 @@
 {
   "name": "proxy-dl",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "description": "Downloads youtube video with a US proxy",
   "main": "proxy-dl.js",
   "author": "Benjamin Robson",
