@@ -37,7 +37,8 @@ var proxydl = () => {
       if (data.includes('country')) {
         console.log(error('Try again, proxy is not in the right country'))
       } else if (data.includes('You must provide at least one URL')) {
-        console.log(error('You need to provide a url: proxy-dl $YOUTUBE_URL'))
+        console.log(error(`You need to provide a url: `))
+        console.log(chalk.green(`    proxy-dl $YOUTUBE_URL`))
       } else {
         console.log(error('\n\n' + data))
       }      
