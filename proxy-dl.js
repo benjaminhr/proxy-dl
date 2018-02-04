@@ -4,7 +4,7 @@ const Progress = require('progress')
 const chalk = require('chalk');
 const url = process.argv.slice(2)
 
-var proxydl = () => {
+const proxydl = () => {
   http.get('http://gimmeproxy.com/api/getProxy\?post\=true\&supportsHttps\=true\&maxCheckPeriod\=3600\&country\=US', (res) => {
     res.setEncoding('utf8');
     res.on('data', (data) => {
@@ -13,15 +13,15 @@ var proxydl = () => {
     })
   })
 
-  var download = function (proxyUrl) {
-    var bar = new Progress(chalk.green('downloading [:bar] :rate/bps :percent :etas'), {
+  const download = function (proxyUrl) {
+    const bar = new Progress(chalk.green('downloading [:bar] :rate/bps :percent :etas'), {
       complete: '=',
       incomplete: ' ',
       width: 20,
       total: 100
     });  
 
-    var command = `youtube-dl ${url} --proxy ${proxyUrl}`
+    const command = `youtube-dl ${url} --proxy ${proxyUrl}`
     const child = exec(command)
 
     child.stdout.on('data', (data) => {
@@ -32,7 +32,7 @@ var proxydl = () => {
     })
     
     child.stderr.on('data', (data) => {
-      var error = chalk.bold.red;
+      const error = chalk.bold.red;
 
       if (data.includes('country')) {
         console.log(error('Try again, proxy is not in the right country'))
